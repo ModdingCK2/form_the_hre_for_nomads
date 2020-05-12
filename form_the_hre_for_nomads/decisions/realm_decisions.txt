@@ -1656,18 +1656,34 @@ decisions = {
 				}
 			}
 			add_artifact = crown_hre
-			primary_title = {
-				show_scope_change = no
-				e_hre = {
+			#Create Electors, depending on capital location:
+			if = {
+				limit = { NOT = { is_nomadic = yes } }
+				primary_title = {
 					show_scope_change = no
-					grant_title = ROOT
-					copy_title_laws = PREV
-					add_law = succ_hre_elective
+					e_hre = {
+						show_scope_change = no
+						grant_title = ROOT
+						copy_title_laws = PREV
+						add_law = succ_hre_elective
+					}
+				}
+
+				hidden_tooltip = {
+					princely_elective_german_elector_setup_effect = yes
 				}
 			}
-
-			hidden_tooltip = {
-				princely_elective_german_elector_setup_effect = yes
+			if = {
+				limit = { is_nomadic = yes }
+				primary_title = {
+					show_scope_change = no
+					e_hre = {
+						show_scope_change = no
+						grant_title = ROOT
+						copy_title_laws = PREV
+						add_law = PREV
+					}
+				}
 			}
 			any_demesne_title = {
 				limit = {
@@ -1995,15 +2011,31 @@ decisions = {
 				give_nickname = nick_the_great
 			}
 			#Create Electors, depending on capital location:
-			princely_elective_apply_elector_setup_effect = yes
-			primary_title = {
-				show_scope_change = no
-				e_hre = {
+			if = {
+				limit = { NOT = { is_nomadic = yes } }
+				princely_elective_apply_elector_setup_effect = yes
+				primary_title = {
 					show_scope_change = no
-					grant_title = ROOT
-					copy_title_laws = PREV
-					set_coa = PREV
-					add_law = succ_hre_elective
+					e_hre = {
+						show_scope_change = no
+						grant_title = ROOT
+						copy_title_laws = PREV
+						set_coa = PREV
+						add_law = succ_hre_elective
+					}
+				}
+			}
+			if = {
+				limit = { is_nomadic = yes }
+				primary_title = {
+					show_scope_change = no
+					e_hre = {
+						show_scope_change = no
+						grant_title = ROOT
+						copy_title_laws = PREV
+						set_coa = PREV
+						add_law = PREV
+					}
 				}
 			}
 			any_demesne_title = {
