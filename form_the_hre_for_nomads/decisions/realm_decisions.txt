@@ -1684,6 +1684,10 @@ decisions = {
 						add_law = PREV
 					}
 				}
+
+				hidden_tooltip = {
+					princely_elective_german_elector_setup_effect = yes
+				}
 			}
 			any_demesne_title = {
 				limit = {
@@ -2027,6 +2031,7 @@ decisions = {
 			}
 			if = {
 				limit = { is_nomadic = yes }
+				princely_elective_apply_elector_setup_effect = yes
 				primary_title = {
 					show_scope_change = no
 					e_hre = {
